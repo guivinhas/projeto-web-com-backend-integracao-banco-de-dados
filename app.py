@@ -9,7 +9,6 @@ cursor = conn.cursor()
 
 # Criar tabela de usuários se não existir
 cursor.execute('''
-    
 ''')
 conn.commit()
 
@@ -30,10 +29,9 @@ def cadastrar_usuario():
 
 @app.route('/login', methods=['POST'])
 def fazer_login():
-    data = request.json
-    email = data['email']
-    password = data['password']
-    cursor.execute('SELECT * FROM usuarios WHERE email = ? AND password = ?', (email, password))
+    email = request.form.get('email')
+    senha = request.form.get('password')
+    cursor.execute('SELECT * FROM usuarios WHERE email = ? AND password = ?', (email, senha))
     usuario = cursor.fetchone()
     if usuario:
         return jsonify({'message': 'Login bem-sucedido!'})
