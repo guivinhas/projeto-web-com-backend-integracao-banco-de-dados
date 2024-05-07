@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Passagens Aéreas</title>
+    <style>
+        body {
+            background-color: #0366d6; /* Azul */
+            color: white; /* Cor do texto em branco */
+            font-family: Arial, sans-serif; /* Fonte do texto */
+            display: flex; /* Centraliza verticalmente e horizontalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100vh; /* Tamanho total da janela de visualização */
+            margin: 0; /* Remove margens padrão */
+        }
+
+        .container {
+            max-width: 800px; /* Largura máxima do contêiner */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo com opacidade */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+            overflow: hidden; /* Esconde partes da imagem que ultrapassam o contêiner */
+        }
+
+        /* Estilos para grupos de formulário */
+        .form-group {
+            margin-bottom: 20px; /* Espaçamento inferior */
+        }
+
+        /* Estilos para rótulos de formulário */
+        .form-group label {
+            display: block; /* Exibe os rótulos em blocos */
+            margin-bottom: 5px; /* Espaçamento inferior */
+            color: white; /* Cor do texto em branco */
+        }
+
+        /* Estilos para campos de entrada de formulário */
+        .form-group input {
+            width: 100%; /* Largura total */
+            padding: 10px; /* Espaçamento interno */
+            border: none; /* Remove a borda */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo com opacidade */
+            box-sizing: border-box; /* Inclui o preenchimento na largura total */
+        }
+
+        /* Estilos para o botão de enviar */
+        .form-group button {
+            width: 100%; /* Largura total */
+            padding: 10px; /* Espaçamento interno */
+            border: none; /* Remove a borda */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: #0366d6; /* Cor de fundo azul */
+            color: white; /* Cor do texto em branco */
+            font-weight: bold; /* Texto em negrito */
+            cursor: pointer; /* Altera o cursor ao passar sobre o botão */
+            transition: background-color 0.3s; /* Transição suave de cor de fundo */
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3; /* Altera a cor de fundo ao passar o mouse */
+        }
+
+        /* Estilos para os links de ação */
+        .actions {
+            display: flex; /* Exibe os links de ação em linha */
+            justify-content: space-between; /* Distribui os links igualmente */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+
+        /* Estilos para as opções de destino */
+        /* Estilos para as imagens dos destinos */
+.destinos img {
+    width: 150px; /* Largura das imagens */
+    height: auto; /* Altura automática para manter a proporção */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    transition: transform 0.3s; /* Transição suave de transformação */
+    margin-right: 20px; /* Espaço à direita para separar as imagens */
+}
+
+
+        /* Estilos para as imagens dos destinos */
+        .destinos img {
+            width: 150px; /* Largura das imagens */
+            height: auto; /* Altura automática para manter a proporção */
+            border-radius: 5px; /* Bordas arredondadas */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+            transition: transform 0.3s; /* Transição suave de transformação */
+        }
+
+        .destinos img:hover {
+            transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+        }
+
+        /* Estilos para a introdução ao passar o mouse sobre as opções */
+        .destinos img::after {
+            content: attr(alt); /* Exibe o atributo 'alt' como conteúdo */
+            position: absolute; /* Posicionamento absoluto */
+            top: 50%; /* Alinha no centro vertical */
+            left: 50%; /* Alinha no centro horizontal */
+            transform: translate(-50%, -50%); /* Centraliza */
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com opacidade */
+            padding: 10px; /* Espaçamento interno */
+            border-radius: 5px; /* Bordas arredondadas */
+            display: none; /* Oculta por padrão */
+        }
+
+        .destinos img:hover::after {
+            display: block; /* Exibe ao passar o mouse */
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Reserva de Passagens Aéreas</h2>
+        <div class="actions">
+            <a href="#">Verificar Minhas Reservas</a> <!-- Link para Verificar Minhas Reservas -->
+            <a href="#">Promoção Troca Pontos</a> <!-- Link para Promoção Troca Pontos -->
+        </div>
+        <div class="destinos">
+            <img src='vista-da-torre-eiffel-simbolo-da-cidade-de-paris-na-franca-e-um-dos-principais-monumentos-do-mundo.webp' alt="Destino 1"> <!-- Imagem do Destino 1 -->
+            <img src='fce632fb-e113-4af1-88ab-1d909fe0a8a0.webp' alt="Destino 2"> <!-- Imagem do Destino 2 -->
+            <img src='./1-cristo-redentor.webp' alt="Destino 3"> <!-- Imagem do Destino 3 -->
+        </div>
+        
+        <div class="form-group">
+            <label for="origem">Origem:</label>
+            <input type="text" id="origem" name="origem" placeholder="Origem" required>
+        </div>
+        <div class="form-group">
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="destino" placeholder="Destino" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Buscar Passagens</button> <!-- Botão de buscar passagens -->
+        </div>
+    </div>
+</body>
+</html>
