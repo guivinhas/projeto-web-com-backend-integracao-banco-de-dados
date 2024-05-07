@@ -86,61 +86,76 @@
         }
     </style>
 </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja bem-vindo</title>
+</head>
 <body>
     <!-- Contêiner principal -->
     <div class="container">
         <!-- Título "Login" -->
-        <h2>Seja bem-vindo <p>
-            faça o login
-        </p>
+        <h2>Seja bem-vindo</h2>
+        <p>Faça o login</p>
             
-        </h2>
         <!-- Grupo de formulário para o campo de email -->
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Digite seu email">
         </div>
+        
         <!-- Grupo de formulário para o campo de senha -->
         <div class="form-group">
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
         </div>
    
-        <div class="form-group" style="text-align: center;"> <!-- Centraliza o botão -->
-            <button onclick="login()" style="font-weight: bold; font-size: 16px;">Entrar</button> <!-- Botão de entrar com evento onclick e estilo -->
-        </div>
-        
+        <!-- Formulário de login -->
+        <form id="loginForm" action="app.py/login" method="post">
+            <div class="form-group" style="text-align: center;"> <!-- Centraliza o botão -->
+                <button type="submit" style="font-weight: bold; font-size: 16px;">Entrar</button> <!-- Botão de entrar com estilo -->
+            </div>
+        </form>
         
         <!-- Seção "Crie uma conta" -->
         <div class="create-account">
-            <p>Novo por aqui? <a href="#">Crie uma conta</a></p>
-            
+            <p>Novo por aqui? <a href="cadastro.html">Crie uma conta</a></p>
         </div>
-        <script>
-            function login() {
-                // Recupere os valores do email e senha
-                var email = document.getElementById('email').value;
-                var senha = document.getElementById('senha').value;
+    </div>
     
-                // Crie um objeto XMLHttpRequest
-                var xhttp = new XMLHttpRequest();
-    
-                // Defina a função de retorno de chamada quando a solicitação estiver concluída
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        // Trate a resposta do servidor aqui
-                        var resposta = this.responseText;
-                        alert(resposta); // Exemplo: exibir uma mensagem de alerta com a resposta do servidor
-                    }
-                };
-    
-                // Defina os detalhes da solicitação AJAX (método POST, URL do servidor, dados a serem enviados)
-                xhttp.open("POST", "processar_login.php", true);
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhttp.send("email=" + email + "&senha=" + senha);
-            }
-        </script>
-    </body>
+    <!-- Script JavaScript -->
+    <script>
+        // Função para enviar dados de login usando AJAX
+        function login() {
+            // Recupere os valores do email e senha
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+
+            // Crie um objeto XMLHttpRequest
+            var xhttp = new XMLHttpRequest();
+
+            // Defina a função de retorno de chamada quando a solicitação estiver concluída
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Trate a resposta do servidor aqui
+                    var resposta = this.responseText;
+                    alert(resposta); // Exemplo: exibir uma mensagem de alerta com a resposta do servidor
+                }
+            };
+
+            // Defina os detalhes da solicitação AJAX (método POST, URL do servidor, dados a serem enviados)
+            xhttp.open("POST", "app.py/login", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("email=" + email + "&senha=" + senha);
+        }
+
+        // Adicionar um ouvinte de evento de envio de formulário para chamar a função de login ao enviar o formulário
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio do formulário padrão
+            login(); // Chama a função de login
+        });
+    </script>
+</body>
     </div>
 </body>
 </html>
