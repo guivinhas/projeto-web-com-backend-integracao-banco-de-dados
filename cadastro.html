@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            background-image: url('./foto1.jpg'); /* Substitua 'caminho/para/sua/imagem.jpg' pelo caminho correto da sua imagem */
+            background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o fundo */
+            background-position: center; /* Centraliza a imagem */ 
+            color: white; /* Cor do texto em branco */
+            font-family: Arial, sans-serif; /* Fonte do texto */
+            display: flex; /* Centraliza verticalmente e horizontalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100vh; /* Tamanho total da janela de visualização */
+            margin: 0; /* Remove margens padrão */
+        }
+
+        .container {
+            max-width: 400px; /* Largura máxima do contêiner */
+            padding: 20px;
+            background-color: rgba(249, 249, 249, 0.9); /* Cor de fundo com opacidade */
+            border-radius: 5px; /* Bordas arredondadas */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            overflow: hidden; /* Esconde partes da imagem que ultrapassam o contêiner */
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Espaçamento inferior */
+        }
+
+        .form-group label {
+            display: block; /* Exibe os rótulos em blocos */
+            margin-bottom: 5px; /* Espaçamento inferior */
+            color: black; /* Cor do texto em preto */
+        }
+
+        .form-group input {
+            width: 100%; /* Largura total */
+            padding: 10px; /* Espaçamento interno */
+            border: none; /* Remove a borda */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: #f0f0f0; /* Cor de fundo cinza claro */
+            box-sizing: border-box; /* Inclui o preenchimento na largura total */
+        }
+
+        .form-group button {
+            width: 100%; /* Largura total */
+            padding: 10px; /* Espaçamento interno */
+            border: none; /* Remove a borda */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: #0366d6; /* Cor de fundo azul */
+            color: white; /* Cor do texto em branco */
+            font-weight: bold; /* Texto em negrito */
+            cursor: pointer; /* Altera o cursor ao passar sobre o botão */
+            transition: background-color 0.3s; /* Transição suave de cor de fundo */
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3; /* Altera a cor de fundo ao passar o mouse */
+        }
+
+        .create-account {
+            text-align: center; /* Alinha o texto ao centro */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+
+        .create-account a {
+            color: black; /* Cor do texto do link */
+            text-decoration: underline; /* Adiciona sublinhado */
+            
+        } 
+
+h2 {
+    color: black; /* Cor do texto em preto */
+}
+
+p {color: black; /}
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registro</h2>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email">
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+        </div>
+        <div class="form-group">
+            <label for="confirmar_senha">Confirmar Senha:</label>
+            <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirme sua senha">
+        </div>
+        <div class="form-group">
+            <button type="submit">Registrar</button> <!-- Botão de registrar -->
+        </div>
+        <div class="create-account">
+            <p>Já tem uma conta? <a href="login.html">Faça login</a></p> <!-- Link para a página de login -->
+        </div>
+    </div>
+</body>
+</html>
