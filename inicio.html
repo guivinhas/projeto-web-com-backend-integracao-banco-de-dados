@@ -14,76 +14,52 @@
             align-items: center; /* Centraliza verticalmente */
             height: 100vh; /* Tamanho total da janela de visualização */
             margin: 0; /* Remove margens padrão */
+            padding: 20px; /* Padding para evitar elementos grudados nas bordas */
+            box-sizing: border-box; /* Inclui padding e border no tamanho total dos elementos */
         }
 
         .container {
             max-width: 800px; /* Largura máxima do contêiner */
+            width: 100%; /* Largura completa até o máximo */
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo com opacidade */
             border-radius: 10px; /* Bordas arredondadas */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra sutil */
             overflow: hidden; /* Esconde partes da imagem que ultrapassam o contêiner */
+            text-align: center; /* Centraliza o texto */
         }
 
-        /* Estilos para grupos de formulário */
-        .form-group {
+        h2 {
             margin-bottom: 20px; /* Espaçamento inferior */
+            font-size: 24px; /* Tamanho da fonte */
         }
 
-        /* Estilos para rótulos de formulário */
-        .form-group label {
-            display: block; /* Exibe os rótulos em blocos */
-            margin-bottom: 5px; /* Espaçamento inferior */
-            color: white; /* Cor do texto em branco */
-        }
-
-        /* Estilos para campos de entrada de formulário */
-        .form-group input {
-            width: 100%; /* Largura total */
-            padding: 10px; /* Espaçamento interno */
-            border: none; /* Remove a borda */
-            border-radius: 5px; /* Bordas arredondadas */
-            background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo com opacidade */
-            box-sizing: border-box; /* Inclui o preenchimento na largura total */
-        }
-
-        /* Estilos para o botão de enviar */
-        .form-group button {
-            width: 100%; /* Largura total */
-            padding: 10px; /* Espaçamento interno */
-            border: none; /* Remove a borda */
-            border-radius: 5px; /* Bordas arredondadas */
-            background-color: #0366d6; /* Cor de fundo azul */
-            color: white; /* Cor do texto em branco */
-            font-weight: bold; /* Texto em negrito */
-            cursor: pointer; /* Altera o cursor ao passar sobre o botão */
-            transition: background-color 0.3s; /* Transição suave de cor de fundo */
-        }
-
-        .form-group button:hover {
-            background-color: #0056b3; /* Altera a cor de fundo ao passar o mouse */
-        }
-
-        /* Estilos para os links de ação */
         .actions {
             display: flex; /* Exibe os links de ação em linha */
             justify-content: space-between; /* Distribui os links igualmente */
             margin-top: 20px; /* Espaçamento superior */
+            margin-bottom: 20px; /* Espaçamento inferior */
         }
 
-        /* Estilos para as opções de destino */
-        /* Estilos para as imagens dos destinos */
-.destinos img {
-    width: 150px; /* Largura das imagens */
-    height: auto; /* Altura automática para manter a proporção */
-    border-radius: 5px; /* Bordas arredondadas */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
-    transition: transform 0.3s; /* Transição suave de transformação */
-    margin-right: 20px; /* Espaço à direita para separar as imagens */
-}
+        .actions a {
+            color: #ffd700; /* Cor do texto dos links */
+            text-decoration: none; /* Remove sublinhado */
+            font-weight: bold; /* Texto em negrito */
+            transition: color 0.3s; /* Transição suave de cor */
+        }
 
+        .actions a:hover {
+            color: #ff4500; /* Cor ao passar o mouse */
+        }
 
-        /* Estilos para as imagens dos destinos */
+        .destinos {
+            display: flex; /* Exibe as imagens dos destinos em linha */
+            justify-content: center; /* Centraliza as imagens */
+            flex-wrap: wrap; /* Permite quebrar linha quando necessário */
+            gap: 20px; /* Espaço entre as imagens */
+            margin-bottom: 20px; /* Espaçamento inferior */
+        }
+
         .destinos img {
             width: 150px; /* Largura das imagens */
             height: auto; /* Altura automática para manter a proporção */
@@ -96,27 +72,48 @@
             transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
         }
 
-        /* Estilos para a introdução ao passar o mouse sobre as opções */
-        .destinos img::after {
-            content: attr(alt); /* Exibe o atributo 'alt' como conteúdo */
-            position: absolute; /* Posicionamento absoluto */
-            top: 50%; /* Alinha no centro vertical */
-            left: 50%; /* Alinha no centro horizontal */
-            transform: translate(-50%, -50%); /* Centraliza */
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com opacidade */
+        .form-group {
+            margin-bottom: 20px; /* Espaçamento inferior */
+            text-align: left; /* Alinha o texto à esquerda */
+        }
+
+        .form-group label {
+            display: block; /* Exibe os rótulos em blocos */
+            margin-bottom: 5px; /* Espaçamento inferior */
+            color: white; /* Cor do texto em branco */
+            font-weight: bold; /* Texto em negrito */
+        }
+
+        .form-group input {
+            width: 100%; /* Largura total */
             padding: 10px; /* Espaçamento interno */
+            border: none; /* Remove a borda */
             border-radius: 5px; /* Bordas arredondadas */
-            display: none; /* Oculta por padrão */
+            background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo com opacidade */
+            box-sizing: border-box; /* Inclui o preenchimento na largura total */
+            font-size: 16px; /* Tamanho da fonte */
         }
 
-        .destinos img:hover::after {
-            display: block; /* Exibe ao passar o mouse */
+        .form-group button {
+            width: 100%; /* Largura total */
+            padding: 10px; /* Espaçamento interno */
+            border: none; /* Remove a borda */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: #ffd700; /* Cor de fundo dourado */
+            color: #0366d6; /* Cor do texto */
+            font-weight: bold; /* Texto em negrito */
+            cursor: pointer; /* Altera o cursor ao passar sobre o botão */
+            transition: background-color 0.3s, color 0.3s; /* Transição suave de cor de fundo e texto */
+            font-size: 16px; /* Tamanho da fonte */
         }
 
+        .form-group button:hover {
+            background-color: #ff4500; /* Altera a cor de fundo ao passar o mouse */
+            color: white; /* Altera a cor do texto ao passar o mouse */
+        }
     </style>
 </head>
 <body>
-    
     <div class="container">
         <h2>Reserva de Passagens Aéreas</h2>
         <div class="actions">
@@ -128,7 +125,6 @@
             <img src='fce632fb-e113-4af1-88ab-1d909fe0a8a0.webp' alt="Destino 2"> <!-- Imagem do Destino 2 -->
             <img src='./1-cristo-redentor.webp' alt="Destino 3"> <!-- Imagem do Destino 3 -->
         </div>
-        
         <div class="form-group">
             <label for="origem">Origem:</label>
             <input type="text" id="origem" name="origem" placeholder="Origem" required>
@@ -137,7 +133,6 @@
             <label for="destino">Destino:</label>
             <input type="text" id="destino" name="destino" placeholder="Destino" required>
         </div>
-        
         <div class="form-group">
             <label for="data">Data:</label>
             <input type="date" id="data" name="data" required>

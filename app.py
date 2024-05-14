@@ -4,7 +4,7 @@ import pyodbc
 app = Flask(__name__)
 
 # Conectar ao banco de dados SQL Server
-conn = pyodbc.connect('DRIVER={SQL Server};SERVER=DESKTOP-G7JP4L7\SQLEXPRESS;DATABASE=projeto_web;UID='';PWD=''')
+conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=projeto_web;UID='';PWD=''')
 cursor = conn.cursor()
 
 # Criar tabela de usuários se não existir
