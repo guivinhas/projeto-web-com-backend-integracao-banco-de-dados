@@ -23,6 +23,7 @@ def cadastrar_usuario():
     nome = data['nome']
     email = data['email']
     password = data['password']
+    
     cursor.execute('INSERT INTO usuarios (nome, email, password) VALUES (?, ?, ?)', (nome, email, password))
     conn.commit()
     return jsonify({'message': 'Usuário cadastrado com sucesso!'})
@@ -31,12 +32,22 @@ def cadastrar_usuario():
 def fazer_login():
     email = request.form.get('email')
     senha = request.form.get('password')
-    cursor.execute('SELECT * FROM usuarios WHERE email = ? AND password = ?', (email, senha))
-    usuario = cursor.fetchone()
-    if usuario:
-        return jsonify({'message': 'Login bem-sucedido!'})
-    else:
+    
+    try:
+        print("Email recebido:", email)
+        cursor.execute('SELECT * FROM usuarios WHERE email = ?', (email,))
+        usuario = cursor.fetchone()
+        print("Resultado do SELECT:", usuario)
+        if usuario:
+            if senha == usuario.password:
+                print("Senha correta")
+                return jsonify({'message': 'Login bem-sucedido!'})
+            else:
+                print("Senha incorreta")
+
         return jsonify({'message': 'Credenciais inválidas!'}), 401
+    except Exception as e:
+        return jsonify({'message': 'Erro ao fazer login: {}'.format(str(e))}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
